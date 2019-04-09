@@ -15,8 +15,8 @@ class CreateNewblogsTable extends Migration
     {
         Schema::create('newblogs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('category_id');
-            $table->integer('user_id');
+            $table->integer('category_id')->nullable()->comment('カテゴリーID');
+            $table->integer('user_id')->default(0);
             $table->string('title');
             $table->string('message');
 //            $table->timestamps('created_at');

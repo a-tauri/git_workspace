@@ -10,21 +10,31 @@ class PostsNewblog extends Controller
 {
     //
     public function index(){
-        return view('index');
+        $data = Blog::all();
+        return view('index', ['data'=>$data]);
     }
     
-    public function resist(){
-        
-    }
-    
-    public function store(Request $request){
+    public function resist(Request $request){
         
         $blog = new Blog;
         
         $blog->title = $request->title;
         
-        $blog->message = $request->message;
+        $blog->message = $request->article;
         
         $blog->save();
+        
+        return redirect('index');
     }
+    
+//    public function store(Request $request){
+//        
+//        $blog = new Blog;
+//        
+//        $blog->title = $request->title;
+//        
+//        $blog->message = $request->message;
+//        
+//        $blog->save();
+//    }
 }
