@@ -26,3 +26,7 @@ Route::get('/c','test@c');
 Route::get('index','PostsNewblog@index');
 
 Route::post('resist','PostsNewblog@resist');
+
+Route::post('delete','PostsNewblog@delete');
+
+
